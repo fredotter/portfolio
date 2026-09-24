@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-plantin), Georgia, serif;
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --color-ink: #0a0a0a;
+  /* 5.7:1 on white — passes WCAG AA for body text */
+  --color-muted: #666666;
+
+  --animate-fade-in: fade-in 150ms ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+:root {
+  /* Fluid type: hits the design sizes (64px / 24px) at 1440px */
+  --text-name: clamp(32px, 4.444vw, 64px);
+  --text-footer-name: clamp(28px, 2.5vw, 36px);
+  --text-body: clamp(18px, 1.667vw, 24px);
+}
+
+@layer base {
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
